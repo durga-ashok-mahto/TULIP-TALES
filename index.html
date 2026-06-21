@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tulip Tales - Every Reader Deserves The Perfect Story. Discover curated tales, immerse yourself in premium storytelling.">
+  <title>Tulip Tales | Every Reader Deserves The Perfect Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tracker.css">
+  <link rel="stylesheet" href="search.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-area" id="nav-brand">
+        <img src="logo.png" alt="Tulip Tales Logo" class="app-logo">
+        <span class="app-name">Tulip Tales</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active" data-view="home">Home</a>
+        <a href="#search" class="nav-link" data-view="search" id="nav-search-link">Book Search</a>
+        <a href="#tracker" class="nav-link hidden" data-view="tracker" id="nav-tracker-link">Reading Tracker</a>
+        <a href="#login" class="nav-link" data-view="login" id="nav-login-link">Sign In</a>
+        <a href="#register" class="nav-link nav-btn" data-view="register" id="nav-register-link">Register</a>
+        <div class="user-profile-menu hidden" id="user-menu">
+          <span class="username-display" id="header-username">Reader</span>
+          <button class="logout-btn" id="logout-btn">Log Out</button>
+        </div>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Areas -->
+  <main class="main-content">
+    
+    <!-- LANDING PAGE VIEW -->
+    <section id="view-home" class="view-section active">
+      <div class="hero-section">
+        <div class="hero-text-container">
+          <div class="hero-badge">Curated Storytelling</div>
+          <h1 class="hero-title">Every Reader Deserves The Perfect Story</h1>
+          <p class="hero-description">
+            Step into a sanctuary of words. Tulip Tales is a premium reading platform designed for those who cherish literature. We bring stories to life with beautiful presentations and a calm, cozy reading experience.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="hero-get-started">Get Started</button>
+            <button class="btn btn-secondary" id="hero-learn-more">Explore Philosophy</button>
+          </div>
+        </div>
+        <div class="hero-image-container">
+          <img src="hero.png" alt="Cozy reading space with books and tulips" class="hero-image">
+        </div>
+      </div>
+
+      <!-- Features Card Grid -->
+      <div class="features-section">
+        <div class="section-header">
+          <h2>Why Tulip Tales?</h2>
+          <p>We build reading experiences that feel like home.</p>
+        </div>
+        <div class="card-grid">
+          <div class="feature-card">
+            <div class="card-icon">🪶</div>
+            <h3 class="card-title">Curated Selection</h3>
+            <p class="card-text">Every story is handpicked by our editors to ensure the highest standard of prose and imagery.</p>
+          </div>
+          <div class="feature-card">
+            <div class="card-icon">☕</div>
+            <h3 class="card-title">Cozy Sanctuary</h3>
+            <p class="card-text">A warm, beige and brown interface crafted to reduce digital fatigue and let you focus on the words.</p>
+          </div>
+          <div class="feature-card">
+            <div class="card-icon">🌷</div>
+            <h3 class="card-title">Reader Centered</h3>
+            <p class="card-text">Personalize your reading fonts, spacing, and night light modes for absolute reading comfort.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK SEARCH VIEW -->
+    <section id="view-search" class="view-section">
+      <div class="search-container">
+        <!-- Search Hero/Header -->
+        <div class="search-hero">
+          <div class="hero-left">
+            <span class="welcome-label">Explore Catalog</span>
+            <h2>Discover Your Next Story</h2>
+            <p>Immerse yourself in our curated sanctuary of words and find the perfect story for your reading ritual.</p>
+          </div>
+        </div>
+
+        <!-- Search Controls -->
+        <div class="search-controls-card">
+          <!-- Text Search -->
+          <div class="search-input-group">
+            <label for="book-search-input">Search Stories</label>
+            <div class="search-field-wrapper">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="book-search-input" placeholder="Search by title or author...">
+              <button class="clear-search-btn" id="clear-search-btn" title="Clear Search">&times;</button>
+            </div>
+          </div>
+
+          <!-- Filters Section -->
+          <div class="filters-grid">
+            <!-- Genre Filter -->
+            <div class="filter-group">
+              <label>Genre</label>
+              <div class="filter-pills" id="genre-pills">
+                <button class="pill-btn active" data-genre="all">All</button>
+                <button class="pill-btn" data-genre="Classics">Classics</button>
+                <button class="pill-btn" data-genre="Fantasy">Fantasy</button>
+                <button class="pill-btn" data-genre="Historical Fiction">Historical Fiction</button>
+                <button class="pill-btn" data-genre="Poetry">Poetry</button>
+                <button class="pill-btn" data-genre="Cozy Mystery">Cozy Mystery</button>
+              </div>
+            </div>
+
+            <!-- Difficulty Filter -->
+            <div class="filter-group">
+              <label>Difficulty</label>
+              <div class="filter-pills" id="difficulty-pills">
+                <button class="pill-btn active" data-difficulty="all">All</button>
+                <button class="pill-btn" data-difficulty="Easy">Easy</button>
+                <button class="pill-btn" data-difficulty="Medium">Medium</button>
+                <button class="pill-btn" data-difficulty="Hard">Hard</button>
+              </div>
+            </div>
+
+            <!-- Rating Filter -->
+            <div class="filter-group">
+              <label>Minimum Rating</label>
+              <div class="filter-pills" id="rating-pills">
+                <button class="pill-btn active" data-rating="all">All Ratings</button>
+                <button class="pill-btn" data-rating="4.5">4.5+ ★</button>
+                <button class="pill-btn" data-rating="4.0">4.0+ ★</button>
+                <button class="pill-btn" data-rating="3.5">3.5+ ★</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reset Button -->
+          <div class="filter-actions">
+            <button class="btn btn-secondary" id="reset-filters-btn">
+              Reset Filters
+            </button>
+          </div>
+        </div>
+
+        <!-- Search Results Count -->
+        <div class="results-header">
+          <h3 class="search-section-title">Curated Selection</h3>
+          <span class="search-section-badge" id="results-count-badge">0 stories found</span>
+        </div>
+
+        <!-- Search Results Grid -->
+        <div class="books-grid" id="search-books-grid">
+          <!-- Populated dynamically by search.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGIN PAGE VIEW -->
+    <section id="view-login" class="view-section">
+      <div class="auth-wrapper">
+        <div class="auth-card">
+          <div class="auth-header">
+            <h2>Welcome Back</h2>
+            <p>Enter your credentials to return to your sanctuary</p>
+          </div>
+          <form id="login-form" class="auth-form" novalidate>
+            <div class="form-group">
+              <label for="login-email">Email Address</label>
+              <input type="email" id="login-email" required placeholder="name@example.com">
+              <span class="error-message" id="login-email-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <div class="label-wrapper">
+                <label for="login-password">Password</label>
+                <a href="#forgot" class="forgot-link">Forgot Password?</a>
+              </div>
+              <div class="password-input-wrapper">
+                <input type="password" id="login-password" required placeholder="••••••••">
+                <button type="button" class="toggle-password" tabindex="-1">👁️</button>
+              </div>
+              <span class="error-message" id="login-password-error"></span>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" id="login-remember">
+              <label for="login-remember">Remember me for 30 days</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </form>
+          
+          <div class="auth-footer">
+            <p>New to Tulip Tales? <a href="#register" class="auth-switch" data-target="register">Create an account</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTER PAGE VIEW -->
+    <section id="view-register" class="view-section">
+      <div class="auth-wrapper">
+        <div class="auth-card">
+          <div class="auth-header">
+            <h2>Start Your Journey</h2>
+            <p>Join our community of passionate readers</p>
+          </div>
+          <form id="register-form" class="auth-form" novalidate>
+            <div class="form-group">
+              <label for="register-name">Full Name</label>
+              <input type="text" id="register-name" required placeholder="Eleanor Vance">
+              <span class="error-message" id="register-name-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="register-email">Email Address</label>
+              <input type="email" id="register-email" required placeholder="name@example.com">
+              <span class="error-message" id="register-email-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="register-password">Password</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="register-password" required placeholder="••••••••">
+                <button type="button" class="toggle-password" tabindex="-1">👁️</button>
+              </div>
+              <div class="password-strength">
+                <div class="strength-bar" id="strength-bar"></div>
+                <span class="strength-text" id="strength-text">Password strength</span>
+              </div>
+              <span class="error-message" id="register-password-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="register-confirm">Confirm Password</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="register-confirm" required placeholder="••••••••">
+                <button type="button" class="toggle-password" tabindex="-1">👁️</button>
+              </div>
+              <span class="error-message" id="register-confirm-error"></span>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" id="register-terms" required>
+              <label for="register-terms">I agree to the <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a></label>
+            </div>
+            <span class="error-message" id="register-terms-error" style="display:block; margin-top: -10px; margin-bottom: 15px;"></span>
+
+            <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+          </form>
+
+          <div class="auth-footer">
+            <p>Already have an account? <a href="#login" class="auth-switch" data-target="login">Sign In</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD / WELCOME SCREEN VIEW -->
+    <section id="view-dashboard" class="view-section">
+      <div class="dashboard-container">
+        <div class="dashboard-hero">
+          <span class="welcome-label">Welcome Back, Reader</span>
+          <h2 id="dashboard-title">Your Reading Sanctuary</h2>
+          <p>You have successfully logged into Tulip Tales. Find comfort in the stories awaiting you.</p>
+        </div>
+        <div class="dashboard-grid">
+          <div class="dashboard-card">
+            <h3>Recent Stories</h3>
+            <p>Your library is empty. Discover new worlds soon.</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Your Profile</h3>
+            <p id="dashboard-user-info">Email: loader...</p>
+            <button class="btn btn-secondary logout-btn-inline">Logout</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- READING TRACKER VIEW -->
+    <section id="view-tracker" class="view-section">
+      <div class="tracker-container">
+        <!-- Tracker Hero/Header -->
+        <div class="tracker-hero">
+          <div class="hero-left">
+            <span class="welcome-label">My Sanctuary</span>
+            <h2>Your Reading Tracker</h2>
+            <p>Nurture your love for books and cultivate your reading ritual.</p>
+          </div>
+          <!-- Stats Bar -->
+          <div class="tracker-stats-grid" id="tracker-stats">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Continue Reading Section -->
+        <div class="tracker-section" id="continue-reading-section">
+          <div class="section-title-wrapper">
+            <h3 class="tracker-section-title">Continue Reading</h3>
+            <span class="tracker-section-badge" id="active-books-badge">0 active</span>
+          </div>
+          <div class="continue-grid" id="tracker-continue-reading">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- My Library Grid & Filters -->
+        <div class="tracker-section">
+          <div class="library-header">
+            <h3 class="tracker-section-title">My Library</h3>
+            <button class="btn btn-primary" id="tracker-add-btn">
+              <span class="btn-icon">+</span> Add Book
+            </button>
+          </div>
+
+          <!-- Controls: Filters, Search, Sort -->
+          <div class="library-controls">
+            <div class="filter-tabs" id="tracker-tabs">
+              <button class="tab-btn active" data-tab="all">All Books</button>
+              <button class="tab-btn" data-tab="not-started">Not Started</button>
+              <button class="tab-btn" data-tab="in-progress">In Progress</button>
+              <button class="tab-btn" data-tab="completed">Completed</button>
+            </div>
+            
+            <div class="controls-right">
+              <div class="search-wrapper">
+                <input type="text" id="tracker-search" placeholder="Search books or authors...">
+                <span class="search-icon">🔍</span>
+              </div>
+              <div class="sort-wrapper">
+                <label for="tracker-sort">Sort by</label>
+                <select id="tracker-sort">
+                  <option value="recent">Recently Read</option>
+                  <option value="title">Title (A-Z)</option>
+                  <option value="author">Author (A-Z)</option>
+                  <option value="progress">Progress %</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Books Grid -->
+          <div class="books-grid" id="tracker-books-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Reading History Log Section -->
+        <div class="tracker-section tracker-history-section">
+          <h3 class="tracker-section-title">Reading Diary</h3>
+          <p class="section-subtitle">Your latest reading updates</p>
+          <div class="history-log-container" id="tracker-history-log">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Book Modal Overlay -->
+      <div class="tracker-modal-overlay" id="add-book-modal">
+        <div class="tracker-modal">
+          <button class="modal-close" id="add-modal-close">&times;</button>
+          <div class="modal-header">
+            <h4>Add a New Book</h4>
+            <p>Add a story to your sanctuary collection</p>
+          </div>
+          <form id="add-book-form" novalidate>
+            <div class="form-group">
+              <label for="book-title">Book Title</label>
+              <input type="text" id="book-title" required placeholder="e.g. The Secret Garden">
+              <span class="error-message" id="book-title-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="book-author">Author</label>
+              <input type="text" id="book-author" required placeholder="e.g. Frances Hodgson Burnett">
+              <span class="error-message" id="book-author-error"></span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="book-total-pages">Total Pages</label>
+                <input type="number" id="book-total-pages" required min="1" placeholder="e.g. 350">
+                <span class="error-message" id="book-total-pages-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="book-current-page">Current Page</label>
+                <input type="number" id="book-current-page" min="0" value="0" placeholder="e.g. 0">
+                <span class="error-message" id="book-current-page-error"></span>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Select Cover Style</label>
+              <div class="cover-theme-selectors">
+                <label class="theme-selector active">
+                  <input type="radio" name="cover-theme" value="gradient-garden" checked>
+                  <span class="theme-preview gradient-garden"></span>
+                  <span class="theme-name">Garden</span>
+                </label>
+                <label class="theme-selector">
+                  <input type="radio" name="cover-theme" value="gradient-classic">
+                  <span class="theme-preview gradient-classic"></span>
+                  <span class="theme-name">Classic</span>
+                </label>
+                <label class="theme-selector">
+                  <input type="radio" name="cover-theme" value="gradient-emma">
+                  <span class="theme-preview gradient-emma"></span>
+                  <span class="theme-name">Emma</span>
+                </label>
+                <label class="theme-selector">
+                  <input type="radio" name="cover-theme" value="gradient-shadow">
+                  <span class="theme-preview gradient-shadow"></span>
+                  <span class="theme-name">Shadow</span>
+                </label>
+                <label class="theme-selector">
+                  <input type="radio" name="cover-theme" value="gradient-cozy">
+                  <span class="theme-preview gradient-cozy"></span>
+                  <span class="theme-name">Cozy</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="book-cover-url">Or Paste Cover Image URL (Optional)</label>
+              <input type="text" id="book-cover-url" placeholder="https://example.com/cover.jpg">
+            </div>
+
+            <div class="modal-actions">
+              <button type="button" class="btn btn-secondary" id="add-modal-cancel">Cancel</button>
+              <button type="submit" class="btn btn-primary">Add Book</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Delete Confirmation Modal Overlay -->
+      <div class="tracker-modal-overlay" id="delete-confirm-modal">
+        <div class="tracker-modal small">
+          <button class="modal-close" id="delete-modal-close">&times;</button>
+          <div class="modal-header">
+            <h4>Remove Book</h4>
+            <p>Are you sure you want to remove this book from your tracker? This cannot be undone.</p>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-secondary" id="delete-modal-cancel">Cancel</button>
+            <button type="button" class="btn btn-primary danger" id="delete-modal-confirm">Remove Book</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo-area">
+          <img src="logo.png" alt="Tulip Tales Logo" class="app-logo">
+          <span class="app-name">Tulip Tales</span>
+        </div>
+        <p class="footer-tagline">Every Reader Deserves The Perfect Story.</p>
+      </div>
+      <div class="footer-links">
+        <div class="links-group">
+          <h4>Explore</h4>
+          <a href="#about">About Us</a>
+          <a href="#features">Features</a>
+          <a href="#blog">Blog</a>
+        </div>
+        <div class="links-group">
+          <h4>Legal</h4>
+          <a href="#terms">Terms</a>
+          <a href="#privacy">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Tulip Tales. Created with care for bibliophiles.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="app.js"></script>
+  <script type="module" src="tracker.js"></script>
+  <script type="module" src="search.js"></script>
+</body>
+</html>
